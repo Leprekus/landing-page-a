@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
 
 interface CardProps {
 	src: string;
@@ -6,6 +7,7 @@ interface CardProps {
 	size: number;
 	price: number;
 	description: string;
+	className?: string
 }
 export default function Card({
 	src,
@@ -13,9 +15,10 @@ export default function Card({
 	size,
 	price,
 	description,
+	className
 }: CardProps) {
 	return (
-		<div className='flex flex-col w-56 h-80 gap-3 col-span-1 p-4 border rounded-md shadow'>
+		<div className={twMerge(`flex flex-col w-56 h-80 gap-3 col-span-1 p-4 border rounded-md shadow`, className)}>
 			<div className='h-52 w-48 relative rounded-md overflow-hidden'>
 				<Image
 					src={src}
