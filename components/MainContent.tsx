@@ -14,7 +14,7 @@ export default function MainContent() {
 			
 			'>
 				<Card className='' { ...item1 }/>
-				<Card className='' { ...item2 }/>
+				<Card className='hidden sm:flex' { ...item2 }/>
 				<Card className='hidden md:flex' { ...item3 }/>
 				<Card className='hidden lg:flex' { ...item4 }/>
 				<div className='absolute bottom-0 h-32 left-0 right-0 bg-gradient-to-t from-zinc-100 to-transparent flex justify-center items-end p-4'>
