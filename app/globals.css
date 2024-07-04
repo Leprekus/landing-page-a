@@ -3,31 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+	scroll-behavior: smooth;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* CSS class for Mac-like scrollbar */
+.scrollbar {
+    overflow: auto;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Mac-like scrollbar for WebKit browsers (Chrome, Safari) */
+.scrollbar::-webkit-scrollbar {
+    width: 12px;
 }
+
+.scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* For Firefox */
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* For Internet Explorer, Edge */
+.scrollbar {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
